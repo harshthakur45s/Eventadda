@@ -39,7 +39,7 @@ Make sure you have Docker installed, then execute from the root directory:
 ```bash
 docker-compose up --build
 ```
-- **Frontend App**: Accessible at `http://localhost:80`
+- **Frontend App**: Accessible at `http://localhost:5175`
 - **Backend API**: Accessible at `http://localhost:8082`
 - **MySQL Database**: Running on `3306`
 
@@ -67,7 +67,7 @@ cd eventadda-frontend
 npm install
 npm run dev
 ```
-Open your browser and navigate to `http://localhost:5173`.
+Open your browser and navigate to `http://localhost:5175`.
 
 ---
 
