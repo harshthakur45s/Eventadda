@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  mysql-db:
+    image: mysql:8.0
+    container_name: eventadda-mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=harsh45
+      - MYSQL_DATABASE=event_adda_db
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - eventadda-network
+    restart: always
+
+  backend-app:
+    build: ./eventadda-backend
+    container_name: eventadda-backend
+    ports:
+      - "8082:8082"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-db:3306/event_adda_db?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=harsh45
+    depends_on:
+      - mysql-db
+    networks:
+      - eventadda-network
+    restart: always
+
+  frontend-app:
+    build: ./eventadda-frontend
+    container_name: eventadda-frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend-app
+    networks:
+      - eventadda-network
+    restart: always
+
+volumes:
+  mysql_data:
+
+networks:
+  eventadda-network:
+    driver: bridge
