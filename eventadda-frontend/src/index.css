@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -9,46 +9,40 @@ body {
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #050508;
-  color: #f3f4f6;
+  background-color: #09090b; /* Zinc 950 - clean dark background */
+  color: #f4f4f5; /* Zinc 100 */
   overflow-x: hidden;
 }
 
-.font-display {
-  font-family: 'Outfit', sans-serif;
-}
-
-/* Customized glowing fuchsia-violet scrollbars */
+/* Minimalist scrollbars */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: #050508;
+  background: #09090b;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #ec4899, #8b5cf6);
-  border-radius: 3px;
+  background: #27272a; /* Zinc 800 */
+  border-radius: 2px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #f472b6, #a78bfa);
+  background: #3f3f46; /* Zinc 700 */
 }
 
-/* Translucent Obsidian Glassmorphism */
+/* Matte Minimalist Cards */
 .glass {
-  background: rgba(13, 12, 21, 0.45);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.04);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+  background: rgba(9, 9, 11, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid #27272a; /* Zinc 800 */
 }
 
 .glass-hover {
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s ease;
 }
 .glass-hover:hover {
-  background: rgba(19, 18, 30, 0.6);
-  border-color: rgba(236, 72, 153, 0.15); /* glowing border on hover */
-  box-shadow: 0 12px 40px 0 rgba(236, 72, 153, 0.08);
-  transform: translateY(-3px);
+  background: rgba(24, 24, 27, 0.8); /* Zinc 900 */
+  border-color: #52525b; /* Zinc 600 */
+  transform: translateY(-2px);
 }

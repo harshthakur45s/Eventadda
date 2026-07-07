@@ -81,10 +81,10 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Brand */}
         <Link to="/" className="flex items-center gap-2 group">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-fuchsia-500 to-violet-600 flex items-center justify-center shadow-lg shadow-fuchsia-500/20 group-hover:scale-105 transition-transform duration-300">
-            <Calendar className="w-5 h-5 text-white" />
+          <div className="w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center group-hover:border-slate-700 transition-colors duration-300">
+            <Calendar className="w-4.5 h-4.5 text-slate-200" />
           </div>
-          <span className="text-2xl font-bold font-display bg-gradient-to-r from-fuchsia-400 via-violet-400 to-amber-400 bg-clip-text text-transparent">
+          <span className="text-xl font-semibold font-display text-slate-100">
             Event Adda
           </span>
         </Link>
@@ -93,7 +93,7 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-6">
           <Link 
             to="/" 
-            className={`text-sm font-medium transition-colors hover:text-fuchsia-400 ${isActive('/') ? 'text-fuchsia-400' : 'text-slate-300'}`}
+            className={`text-sm font-medium transition-colors hover:text-white ${isActive('/') ? 'text-white' : 'text-slate-400'}`}
           >
             Browse Events
           </Link>
@@ -104,30 +104,30 @@ const Navbar = () => {
                 <>
                   <Link 
                     to="/organizer/dashboard" 
-                    className={`flex items-center gap-1.5 text-sm font-medium transition-colors hover:text-fuchsia-400 ${isActive('/organizer/dashboard') ? 'text-fuchsia-400' : 'text-slate-300'}`}
+                    className={`flex items-center gap-1.5 text-sm font-medium transition-colors hover:text-white ${isActive('/organizer/dashboard') ? 'text-white' : 'text-slate-400'}`}
                   >
-                    <LayoutDashboard className="w-4 h-4" /> Dashboard
+                    <LayoutDashboard className="w-4 h-4 text-slate-400" /> Dashboard
                   </Link>
                   <Link 
                     to="/organizer/create-event" 
-                    className={`flex items-center gap-1.5 text-sm font-medium transition-colors hover:text-fuchsia-400 ${isActive('/organizer/create-event') ? 'text-fuchsia-400' : 'text-slate-300'}`}
+                    className={`flex items-center gap-1.5 text-sm font-medium transition-colors hover:text-white ${isActive('/organizer/create-event') ? 'text-white' : 'text-slate-400'}`}
                   >
-                    <PlusCircle className="w-4 h-4" /> Create Event
+                    <PlusCircle className="w-4 h-4 text-slate-400" /> Create Event
                   </Link>
                 </>
               ) : (
                 <>
                   <Link 
                     to="/participant/dashboard" 
-                    className={`flex items-center gap-1.5 text-sm font-medium transition-colors hover:text-fuchsia-400 ${isActive('/participant/dashboard') ? 'text-fuchsia-400' : 'text-slate-300'}`}
+                    className={`flex items-center gap-1.5 text-sm font-medium transition-colors hover:text-white ${isActive('/participant/dashboard') ? 'text-white' : 'text-slate-400'}`}
                   >
-                    <Layers className="w-4 h-4" /> My Registrations
+                    <Layers className="w-4 h-4 text-slate-400" /> My Registrations
                   </Link>
                   <Link 
                     to="/participant/wishlist" 
-                    className={`flex items-center gap-1.5 text-sm font-medium transition-colors hover:text-fuchsia-400 ${isActive('/participant/wishlist') ? 'text-fuchsia-400' : 'text-slate-300'}`}
+                    className={`flex items-center gap-1.5 text-sm font-medium transition-colors hover:text-white ${isActive('/participant/wishlist') ? 'text-white' : 'text-slate-400'}`}
                   >
-                    <Heart className="w-4 h-4" /> Wishlist
+                    <Heart className="w-4 h-4 text-slate-400" /> Wishlist
                   </Link>
                 </>
               )}
@@ -142,11 +142,11 @@ const Navbar = () => {
               {/* Notification Bell */}
               <button 
                 onClick={handleBellClick}
-                className="relative p-2 rounded-lg bg-slate-900 border border-slate-800/80 hover:bg-slate-800 text-slate-300 hover:text-fuchsia-400 transition-all duration-300"
+                className="relative p-2 rounded-lg bg-slate-900 border border-slate-800/80 hover:bg-slate-850 text-slate-350 hover:text-white transition-all duration-300"
               >
                 <Bell className="w-4.5 h-4.5" />
                 {unreadCount > 0 && (
-                  <span className="absolute -top-1.5 -right-1.5 min-w-[16px] h-4 px-1 rounded-full bg-rose-500 text-white text-[9px] font-black flex items-center justify-center border border-slate-950 animate-pulse shadow-glow-fuchsia">
+                  <span className="absolute -top-1 -right-1 min-w-[14px] h-3.5 px-0.5 rounded-full bg-rose-500 text-white text-[8px] font-black flex items-center justify-center border border-slate-950">
                     {unreadCount}
                   </span>
                 )}
@@ -161,16 +161,16 @@ const Navbar = () => {
 
               {/* User Identity */}
               <div className="flex items-center gap-2.5">
-                <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-fuchsia-500 to-violet-600 flex items-center justify-center font-bold text-white shadow-md text-sm">
+                <div className="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center font-bold text-slate-200 text-xs">
                   {user.profileImage ? (
-                    <img src={user.profileImage} alt="Profile" className="w-full h-full rounded-full object-cover" />
+                    <img src={user.profileImage} alt="Profile" className="w-full h-full rounded-lg object-cover" />
                   ) : (
                     user.name.charAt(0).toUpperCase()
                   )}
                 </div>
                 <div className="hidden lg:block text-left">
                   <p className="text-xs font-semibold text-slate-200 leading-tight">{user.name}</p>
-                  <p className="text-[10px] text-fuchsia-400 font-medium capitalize">{user.role.toLowerCase()}</p>
+                  <p className="text-[9px] text-slate-450 font-medium capitalize">{user.role.toLowerCase()}</p>
                 </div>
               </div>
 
@@ -180,10 +180,10 @@ const Navbar = () => {
                   logout();
                   navigate('/login');
                 }}
-                className="p-2 rounded-lg bg-rose-500/10 border border-rose-500/20 hover:bg-rose-500/20 text-rose-400 hover:text-rose-300 transition-all duration-300 text-sm font-medium flex items-center gap-1"
+                className="p-2 rounded-lg bg-slate-900 border border-slate-800 hover:bg-slate-850 hover:border-slate-700 text-slate-400 hover:text-white transition-all duration-300 text-sm font-medium flex items-center gap-1"
                 title="Logout"
               >
-                <LogOut className="w-4 h-4" />
+                <LogOut className="w-4 h-4 text-slate-450" />
                 <span className="hidden md:inline">Sign Out</span>
               </button>
             </div>
@@ -191,13 +191,13 @@ const Navbar = () => {
             <div className="flex items-center gap-3">
               <Link 
                 to="/login"
-                className="px-4 py-2 rounded-lg text-sm font-medium text-slate-400 hover:text-white transition-colors duration-300"
+                className="px-4 py-2 rounded-lg text-sm font-medium text-slate-450 hover:text-white transition-colors duration-300"
               >
                 Sign In
               </Link>
               <Link 
                 to="/register"
-                className="px-4 py-2 rounded-lg bg-gradient-to-r from-fuchsia-600 to-violet-600 hover:from-fuchsia-500 hover:to-violet-500 text-white text-sm font-semibold transition-all duration-300 shadow-lg shadow-fuchsia-600/20"
+                className="px-4 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-950 text-sm font-semibold transition-all duration-300 shadow-sm"
               >
                 Get Started
               </Link>

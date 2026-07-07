@@ -231,7 +231,7 @@ const CreateEvent = () => {
                   type="button"
                   onClick={() => setIsPaid(false)}
                   className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
-                    !isPaid ? 'bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow' : 'text-slate-500'
+                    !isPaid ? 'bg-slate-100 text-slate-950 shadow-sm' : 'text-slate-500 hover:text-slate-350'
                   }`}
                 >
                   Free
@@ -240,7 +240,7 @@ const CreateEvent = () => {
                   type="button"
                   onClick={() => setIsPaid(true)}
                   className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
-                    isPaid ? 'bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow' : 'text-slate-500'
+                    isPaid ? 'bg-slate-100 text-slate-950 shadow-sm' : 'text-slate-500 hover:text-slate-350'
                   }`}
                 >
                   Paid
@@ -322,7 +322,7 @@ const CreateEvent = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-3.5 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 disabled:from-slate-800 disabled:to-slate-800 text-white rounded-xl text-sm font-bold shadow-lg shadow-indigo-600/10 cursor-pointer"
+            className="w-full py-3.5 bg-slate-100 hover:bg-slate-205 disabled:bg-slate-800 disabled:text-slate-500 text-slate-950 rounded-xl text-sm font-bold shadow-sm cursor-pointer transition-colors duration-300"
           >
             {loading ? 'Publishing Event...' : 'Publish Live Event'}
           </button>

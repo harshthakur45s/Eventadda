@@ -31,13 +31,10 @@ const Login = () => {
 
   return (
     <div className="min-h-[80vh] flex items-center justify-center px-6 relative select-none">
-      {/* Background Decorative Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[420px] h-[420px] rounded-full bg-fuchsia-600/5 blur-[100px] pointer-events-none"></div>
-
-      <div className="w-full max-w-md glass border border-slate-900 rounded-3xl p-8 shadow-2xl relative">
+      <div className="w-full max-w-md glass border border-slate-800 rounded-3xl p-8 shadow-md relative">
         {/* Header */}
         <div className="text-center space-y-3 mb-8">
-          <div className="inline-flex w-12 h-12 rounded-2xl bg-fuchsia-500/10 border border-fuchsia-500/20 items-center justify-center text-fuchsia-400 shadow-glow-fuchsia">
+          <div className="inline-flex w-12 h-12 rounded-2xl bg-slate-900 border border-slate-800 items-center justify-center text-slate-200">
             <ShieldCheck className="w-6 h-6" />
           </div>
           <h2 className="text-2xl font-bold font-display text-slate-100">Welcome Back</h2>
@@ -46,7 +43,7 @@ const Login = () => {
 
         {/* Error Indicator */}
         {error && (
-          <div className="p-3.5 mb-6 text-xs text-rose-400 bg-rose-500/10 border border-rose-500/20 rounded-xl text-left">
+          <div className="p-3.5 mb-6 text-xs text-rose-450 bg-rose-500/10 border border-rose-500/20 rounded-xl text-left">
             {error}
           </div>
         )}
@@ -55,7 +52,7 @@ const Login = () => {
         <form onSubmit={handleSubmit} className="space-y-5 text-left">
           <div className="space-y-1.5">
             <label className="text-xs font-semibold text-slate-400">Email Address</label>
-            <div className="relative flex items-center bg-slate-950 border border-slate-800 focus-within:border-fuchsia-500/40 rounded-xl transition-all duration-300">
+            <div className="relative flex items-center bg-slate-950 border border-slate-850 focus-within:border-slate-650 rounded-xl transition-all duration-300">
               <Mail className="w-4 h-4 text-slate-600 absolute left-4" />
               <input
                 type="email"
@@ -72,7 +69,7 @@ const Login = () => {
             <div className="flex items-center justify-between">
               <label className="text-xs font-semibold text-slate-400">Password</label>
             </div>
-            <div className="relative flex items-center bg-slate-950 border border-slate-800 focus-within:border-fuchsia-500/40 rounded-xl transition-all duration-300">
+            <div className="relative flex items-center bg-slate-950 border border-slate-850 focus-within:border-slate-650 rounded-xl transition-all duration-300">
               <Lock className="w-4 h-4 text-slate-600 absolute left-4" />
               <input
                 type="password"
@@ -88,7 +85,7 @@ const Login = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-fuchsia-600 to-violet-600 hover:from-fuchsia-500 hover:to-violet-500 disabled:from-slate-800 disabled:to-slate-800 text-white font-bold text-sm shadow-lg shadow-fuchsia-600/10 flex items-center justify-center gap-2 transition-all duration-300 hover:gap-3 cursor-pointer"
+            className="w-full py-3 px-4 rounded-xl bg-slate-100 hover:bg-slate-250 text-slate-950 font-bold text-sm shadow-sm flex items-center justify-center gap-2 transition-all duration-300 hover:gap-3 cursor-pointer"
           >
             {loading ? 'Verifying...' : (
               <>
@@ -99,9 +96,9 @@ const Login = () => {
         </form>
 
         {/* Register Footer */}
-        <div className="mt-8 text-center text-xs text-slate-500">
+        <div className="mt-8 text-center text-xs text-slate-550">
           New to Event Adda?{' '}
-          <Link to="/register" className="text-fuchsia-400 font-bold hover:text-fuchsia-300 transition-colors">
+          <Link to="/register" className="text-slate-100 font-bold hover:underline transition-colors">
             Create an Account
           </Link>
         </div>
